@@ -18,8 +18,7 @@ app.post("/notify", (req, res) => {
   const sendTelegram = async (url) => {
     try {
       const response = await axios.post(url);
-      const json = await response.json();
-      if (json.ok) {
+      if (response.ok) {
         console.log("Message Send");
       } else {
         console.log("Send fail");
